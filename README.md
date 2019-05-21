@@ -32,7 +32,7 @@ $request = (new Request())
     ->setAuthentication('user', 'password')
 ;
 $response = $curler->request($request);
-echo $response->getResponse();  // '<html>...</html>'
+echo $response->text();  // '<html>...</html>'
 var_dump($response->getMetaData()); // array of response metadata (content-type, status...)
 ```
 
