@@ -33,7 +33,6 @@
             "WernerDweight\\Curler\\Tests\\": "Tests"
         }
     },
-    "target-dir": "WernerDweight/Curler",
     "scripts": {
         "fix": "ecs check ./src/ ./Tests/ --config vendor/wernerdweight/cs/WernerDweight/CS/src/ecs.yaml --fix",
         "phpstan": "phpstan analyse ./src/ ./Tests/ --level max",
