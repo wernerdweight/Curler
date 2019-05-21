@@ -1,0 +1,46 @@
+{
+    "name": "wernerdweight/curler",
+    "type": "library",
+    "description": "cURL helper for PHP",
+    "keywords": [
+        "cURL",
+        "request",
+        "api"
+    ],
+    "homepage": "https://github.com/wernerdweight/Curler",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Werner Dweight Solutions",
+            "email": "info@wds.blue"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "wernerdweight/ra": "^0.3"
+    },
+    "require-dev": {
+        "wernerdweight/cs": "^1.2.1"
+    },
+    "suggest": {},
+    "autoload": {
+        "psr-4": {
+            "WernerDweight\\Curler\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WernerDweight\\Curler\\Tests\\": "Tests"
+        }
+    },
+    "target-dir": "WernerDweight/Curler",
+    "scripts": {
+        "fix": "ecs check ./src/ ./Tests/ --config vendor/wernerdweight/cs/WernerDweight/CS/src/ecs.yaml --fix",
+        "phpstan": "phpstan analyse ./src/ ./Tests/ --level max",
+        "phpmd": "phpmd ./src/ text vendor/wernerdweight/cs/WernerDweight/CS/phpmd.xml",
+        "ecs": "ecs check ./src/ ./Tests/ --config vendor/wernerdweight/cs/WernerDweight/CS/src/ecs.yaml",
+        "ecs-fix": "ecs check ./src/ ./Tests/ --config vendor/wernerdweight/cs/WernerDweight/CS/src/ecs.yaml --fix",
+        "phpunit": "phpunit",
+        "victor": "victor"
+    }
+}
