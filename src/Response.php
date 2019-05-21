@@ -38,6 +38,7 @@ class Response
      * @return bool
      *
      * @throws \WernerDweight\RA\Exception\RAException
+     * @SuppressWarnings(PHPMD.ShortMethodName)
      */
     public function ok(): bool
     {

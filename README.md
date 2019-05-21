@@ -58,6 +58,19 @@ Allows to fetch data according to given `$request`.
 * **`getAuthentication(): ?array`**
 
 #### Response
-* **`getResponse(): string`**
-* **`getJsonResponse(): WernerDweight\RA\RA`**
-* **`getMetaData(): WernerDweight\RA\RA`**
+* **`getMetaData(): WernerDweight\RA\RA`** \
+cURL info (see [here](https://www.php.net/manual/en/function.curl-getinfo.php)).
+* **`ok(): bool`** \
+Returns a boolean stating whether the response was successful (status in the range 200-299) or not.
+* **`redirected(): bool`** \
+Returns whether or not the response is the result of a redirect; that is, redirect count is more than zero.
+* **`status(): int`** \
+Returns the status code of the response (e.g., 200 for a success).
+* **`contentType(): string`** \
+Returns the content type of the response (e.g., text/html).
+* **`url(): string`** \
+Returns the URL of the response.
+* **`text(): string`** \
+Returns the response as text.
+* **`json(): WernerDweight\RA\RA`**
+Returns the response as RA (see [here](https://github.com/wernerdweight/RA)).
