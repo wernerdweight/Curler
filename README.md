@@ -21,9 +21,19 @@ composer require wernerdweight/curler
 
 ```php
 use WernerDweight\Curler\Curler;
+use WernerDweight\Curler\Request;
 
-// TODO:
 $curler = new Curler();
+$request = (new Request())
+    ->setEndpoint('https://some-website.tld')
+    ->setMethod('POST')
+    ->setPayload(['key' => 'value'])
+    ->setHeaders(['Accept: text/html', 'Accept-Encoding: gzip'])
+    ->setAuthentication('user', 'password')
+;
+$response = $curler->request($request);
+echo $response->getResponse();  // '<html>...</html>'
+var_dump($response->getMetaData()); // array of response metadata (content-type, status...)
 ```
 
 API
@@ -34,7 +44,20 @@ API
 Allows to fetch data according to given `$request`.
 
 #### Request
-TODO:
+* **`setEndpoint(string $endpoint): self`**
+* **`getEndpoint(): ?string`**
+* **`setMethod(string $method): self`**
+* **`getMethod(): ?string`**
+* **`setPayload(array $payload): self`**
+* **`getPayload(): ?array`**
+* **`setHeaders(array $headers): self`**
+* **`addHeader(string $header): self`**
+* **`removeHeader(string $header): bool`**
+* **`getHeaders(): ?array`**
+* **`setAuthentication(string $user, string $password): self`**
+* **`getAuthentication(): ?array`**
 
 #### Response
-TODO:
+* **`getResponse(): string`**
+* **`getJsonResponse(): WernerDweight\RA\RA`**
+* **`getMetaData(): WernerDweight\RA\RA`**
