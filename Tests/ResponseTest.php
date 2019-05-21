@@ -28,7 +28,13 @@ class ResponseTest extends TestCase
      */
     public function testGetMetaData(): void
     {
-        $response = new Response('', ['http_code' => 200, 'http_status' => 'ok']);
-        $this->assertSame(['http_code' => 200, 'http_status' => 'ok'], $response->getMetaData()->toArray());
+        $response = new Response('', [
+            'http_code' => 200,
+            'http_status' => 'ok',
+        ]);
+        $this->assertSame([
+            'http_code' => 200,
+            'http_status' => 'ok',
+        ], $response->getMetaData()->toArray());
     }
 }

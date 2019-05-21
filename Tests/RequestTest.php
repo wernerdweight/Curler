@@ -59,7 +59,10 @@ class RequestTest extends TestCase
         $request = new Request();
         $request->setHeaders(['Content-Type: text/json', 'Origin: localhost']);
         $request->addHeader('X-Requested-By: Test');
-        $this->assertSame(['Content-Type: text/json', 'Origin: localhost', 'X-Requested-By: Test'], $request->getHeaders());
+        $this->assertSame(
+            ['Content-Type: text/json', 'Origin: localhost', 'X-Requested-By: Test'],
+            $request->getHeaders()
+        );
     }
 
     /**
@@ -80,6 +83,9 @@ class RequestTest extends TestCase
     {
         $request = new Request();
         $request->setAuthentication('user', 'password');
-        $this->assertSame(['user' => 'user', 'password' => 'password'], $request->getAuthentication());
+        $this->assertSame([
+            'user' => 'user',
+            'password' => 'password',
+        ], $request->getAuthentication());
     }
 }
