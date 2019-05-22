@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace WernerDweight\Curler;
 
+use Safe\Exceptions\StringsException;
+
 class Request
 {
     /** @var string */
@@ -149,5 +151,17 @@ class Request
     public function getAuthentication(): ?array
     {
         return $this->authentication;
+    }
+
+    /**
+     * @param string $token
+     *
+     * @return Request
+     *
+     * @throws StringsException
+     */
+    public function setBearerAuthorization(string $token): self
+    {
+        return $this->addHeader(\Safe\sprintf('Authorization: Bearer %s', $token));
     }
 }

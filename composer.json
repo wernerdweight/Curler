@@ -17,10 +17,12 @@
     ],
     "require": {
         "php": ">=7.2.0",
-        "wernerdweight/ra": "^0.3"
+        "wernerdweight/ra": "^0.3",
+        "thecodingmachine/safe": "^0.1.13"
     },
     "require-dev": {
-        "wernerdweight/cs": "^1.2.1"
+        "wernerdweight/cs": "^1.2.1",
+        "thecodingmachine/phpstan-safe-rule": "^0.1.2"
     },
     "suggest": {},
     "autoload": {

@@ -56,6 +56,7 @@ Allows to fetch data according to given `$request`.
 * **`getHeaders(): ?array`**
 * **`setAuthentication(string $user, string $password): self`**
 * **`getAuthentication(): ?array`**
+* **`setBearerAuthorization(string $token): self`**
 
 #### Response
 * **`getMetaData(): WernerDweight\RA\RA`** \
