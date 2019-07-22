@@ -37,8 +37,12 @@ class RequestTest extends TestCase
     public function testSetGetPayload(): void
     {
         $request = new Request();
-        $request->setPayload(['key' => ['value']]);
-        $this->assertSame(['key' => ['value']], $request->getPayload());
+        $request->setPayload([
+            'key' => ['value'],
+        ]);
+        $this->assertSame([
+            'key' => ['value'],
+        ], $request->getPayload());
     }
 
     /**
