@@ -19,7 +19,7 @@ class Curler
             case 'POST':
                 curl_setopt($curl, CURLOPT_POST, 1);
                 if (null !== $request->getPayload()) {
-                    curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($request->getPayload()));
+                    curl_setopt($curl, CURLOPT_POSTFIELDS, $request->getPayload());
                 }
                 break;
             case 'PUT':
